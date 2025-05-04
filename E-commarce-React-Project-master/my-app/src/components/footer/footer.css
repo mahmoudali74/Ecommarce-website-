@@ -1,0 +1,30 @@
+.footer{
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+h1{
+    font-family: serif;
+}
+.col-one,.col-two,.col-three{
+    margin: 50px 10px;
+}
+.col-one h1{
+    margin-bottom: 30px;
+}
+
+.footerlink{
+    text-decoration: none;
+    display: block;
+    margin: 30px;
+}
+
+.col-three i{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+}
+

@@ -1,0 +1,93 @@
+.whole {
+    /* margin-bottom: 5px; */
+    /* margin-top: 100vh !important; */
+    margin-bottom: 70% !important;
+    position: relative !important;
+    top: 15% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.info {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: -35%;
+    transform: translateX(-50%);
+}
+
+.data {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    left: 14%;
+    top: 58%;
+    display: grid;
+    font-size: 15px;
+    gap: 7px;
+    width: 100px;
+}
+
+.data span {
+    font-size: 21px;
+    line-height: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    width: fit-content;
+}
+.data span:first-child{
+    font-size: 25px;
+}
+
+.data span:nth-child(2) {
+    margin-left: 55px;
+}
+
+.bForm {
+    width: 550px;
+    height: 430px;
+    position: absolute;
+    top: 200px;
+}
+
+.word {
+    font-size: 20px;
+    color: gray;
+}
+.form-control {
+    outline: none !important;
+    border: none !important;
+    border-bottom: solid 1px lightgrey !important;
+    border-radius: 0 !important;
+}
+
+.form-control:focus{
+    outline: none !important;
+    border: none !important;
+    border-bottom: solid 1px rgb(41, 141, 255) !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+.form-text {
+    font-size: 0.7em !important;
+}
+
+/* .form-card {
+    position: relative;
+    top: 275px;
+} */
+.from-content{
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@media(max-width: 600px){
+    .bForm{
+    width: 350px;
+    }
+    img{
+        width: 350px;
+    }
+}

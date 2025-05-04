@@ -1,0 +1,69 @@
+.nav-section{
+    margin-bottom: 20px;
+    background-color: black;
+   
+}
+
+.brand{
+    font-weight: bold;
+    font-family:cursive;
+    color: white !important;
+    margin: 5px 2px !important;
+    padding: 20px 5px  !important;
+}
+
+.link{
+    color: white;
+    text-decoration: none;
+}
+.toggle-icon{
+    background-color: rgb(0, 71, 177) !important;
+}
+
+.NavLink{
+    color: white !important;
+    max-width:150px ;
+    margin: 5px auto !important; 
+}
+
+.NavLink:hover{
+    background-color: rgb(0, 71, 177) !important;
+    cursor: pointer;
+
+}
+
+.navLinks .NavLink{
+    text-align: center;
+    font-weight: 500;
+    padding: 20px 30px  !important;
+}
+
+.icon{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 5px 20px;
+    color: white;
+    font-size: 30px;
+    margin: 10px;
+}
+.icon:hover{
+    color: rgb(0, 71, 177);
+}
+
+.login{
+    padding: 10px 30px;
+    font-weight: 500;
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.login:hover{
+    background-color: rgb(0, 71, 177);
+    color: white;
+}
+
