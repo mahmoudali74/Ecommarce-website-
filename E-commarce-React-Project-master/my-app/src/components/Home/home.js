@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import './home.css';
+
 function ProductList() {
   const [products, setProducts] = useState([]);
 
@@ -12,94 +14,121 @@ function ProductList() {
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
 
+  const featuredProducts = products.slice(0, 6);
+  const offers = products.slice(6, 10);
+
   return (
-    <>
-    <body style={{backgroundColor:"#6a11cb"}}>
+    <div style={{ background: "linear-gradient(to bottom right, #121212, #1f1f1f)", color: "white", fontFamily: 'Poppins, sans-serif' }}>
       {/* Hero Section */}
-      <header className="text-center py-5" style={{ background: "#F5FFFA",marginTop:"-20px" }}>
+      <header className="text-center py-5 hero-header bg-dark border-bottom border-warning">
         <div className="container">
-          <h1>Welcome to S-Store</h1>
-          <p>Shop the latest trends in fashion, electronics, and more.</p>
-          <a href="/products" className="btn btn-light btn-lg">Shop Now</a>
+          <h1 className="display-4 fw-bold text-light">
+            Welcome to <span className="text-warning">S-Store</span>
+          </h1>
+          <p className="lead text-secondary">Shop the latest trends in fashion, electronics, and more.</p>
+          <Link to="/products" className="btn btn-warning btn-lg px-4 rounded-pill shadow">
+            Shop Now
+          </Link>
         </div>
       </header>
 
-      <div class="container mt-4">
-        <div id="cardSlider" class="carousel slide" data-bs-ride="carousel">
-
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="card">
-                <img src='../photos/pexels-sameer-kalani-3802602.jpg' class="card-img-top" alt="Image 1" style={{ width:"300px" }} />
-                <div class="card-body">
-                  <h5 class="card-title">Canon EOS Rebel T7 DSLR </h5>
-                  <p class="card-text">Camera with 18-55mm Lens | Built-in Wi-Fi | 24.1 MP CMOS Sensor | DIGIC 4+ Image</p>
+      {/* Carousel */}
+      <div className="container mt-4">
+        <div id="cardSlider" className="carousel slide rounded shadow overflow-hidden" data-bs-ride="carousel">
+          <div className="carousel-inner">
+            {[1, 2, 3].map((i, index) => (
+              <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={i}>
+                <div className="card slider-card bg-dark text-white border-warning border-2">
+                  <img
+                    src={`../photos/pexels-${index === 0 ? 'sameer-kalani-3802602' : index === 1 ? 'pixabay-258244' : 'muffin-creatives-1616096'}.jpg`}
+                    className="card-img-top slider-img"
+                    alt={`Image ${i}`}
+                    style={{ height: '500px', width: '100%', objectFit: 'cover' }}
+                  />
+                  <div className="card-body text-center">
+                    <h5 className="card-title text-warning">
+                      {index === 0
+                        ? 'Canon EOS Rebel T7 DSLR'
+                        : index === 1
+                          ? 'Pacifica Beauty'
+                          : 'Kendra Scott Letters'}
+                    </h5>
+                    <p className="card-text">
+                      {index === 0
+                        ? 'Camera with 18-55mm Lens | Built-in Wi-Fi | 24.1 MP CMOS Sensor | DIGIC 4+ Image'
+                        : index === 1
+                          ? 'Island Vanilla Hair Perfume & Body Spray'
+                          : 'A-Z Pendant Necklace for Women, Fashion Jewelry'}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card">
-                <img src="../photos/pexels-pixabay-258244.jpg" class="card-img-top" alt="Image 2" style={{ height: '480px' }} />
-                <div class="card-body">
-                  <h5 class="card-title">Pacifica Beauty </h5>
-                  <p class="card-text">Island Vanilla Hair Perfume & Body Spray</p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card">
-                <img src="../photos/pexels-muffin-creatives-1616096.jpg" class="card-img-top" alt="Image 3" style={{ height: '480px' }} />
-                <div class="card-body">
-                  <h5 class="card-title">Kendra Scott Letters</h5>
-                  <p class="card-text"> A-Z Pendant Necklace for Women, Fashion Jewelry</p>
-                </div>
-              </div>
-            </div>
-
+            ))}
           </div>
-
-
-          <a class="carousel-control-prev" href="#cardSlider" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#cardSlider" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </a>
+          <button className="carousel-control-prev" type="button" data-bs-target="#cardSlider" data-bs-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button className="carousel-control-next" type="button" data-bs-target="#cardSlider" data-bs-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
 
+      {/* Product Cards */}
       <div className="container mt-5">
-        <h2 className="text-center mb-4 " style={{ color: 'white' }}>Featured Products</h2>
+        <h2 className="text-center mb-4 fancy-title text-warning fw-bold display-6">Featured Products</h2>
+        <div className="row">
+          {featuredProducts.map((product) => (
+            <div className="col-md-4 mb-4" key={product.id}>
+              <div className="card product-card h-100 text-white shadow-lg border border-warning border-2 bg-dark">
+                <img
+                  src={product.image}
+                  className="card-img-top p-3 img-fluid bg-white rounded"
+                  alt={product.title}
+                  style={{ height: '240px', objectFit: 'contain' }}
+                />
+                <div className="card-body d-flex flex-column">
+                  <h5 className="card-title fw-bold text-warning">{product.title}</h5>
+                  <p className="card-text text-muted">Category: {product.category}</p>
+                  <p className="card-text text-muted">Stock: {product.rating.count}</p>
+                  <p className="card-text text-white fw-bold">${product.price}</p>
+                  <Link to={`/product/${product.id}`} className="btn btn-outline-warning w-100 rounded-pill mt-auto">
+                    View Details
+                  </Link>
 
-        <div className="container mt-5">
-           <div className="row">
-      {products.map((product) => (
-        <div className="col-sm-4 " key={product.id} >
-          <div className="card mb-4 cards">
-            <img style={{width:'140px', margin:'20px auto'}}
-              src={product.image}
-              className="card-img-top"
-              alt={product.title}
-            />
-            <div className="card-body">
-              <h5 className="titlee">{product.title}</h5>
-              <h5 className="category">category : {product.category}</h5>
-              <h5 className="quantity">quantity : {product.rating.count}</h5>
-             
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
-      ))}
+
+        {/* Offers Section */}
+        <h2 className="text-center mb-4 mt-5 text-warning fw-bold display-6">🔥 Special Offers</h2>
+        <div className="row">
+          {offers.map((product) => (
+            <div className="col-md-3 mb-4" key={product.id}>
+              <div className="card bg-gradient text-white h-100 border border-warning border-2 shadow-lg bg-dark">
+                <img
+                  src={product.image}
+                  className="card-img-top p-2 img-fluid bg-white rounded"
+                  alt={product.title}
+                  style={{ height: '220px', objectFit: 'contain' }}
+                />
+                <div className="card-body text-center">
+                  <h6 className="card-title fw-semibold text-warning">{product.title}</h6>
+                  <p className="card-text text-white fw-bold">${product.price}</p>
+                  <Link to={`/product/${product.id}`} className="btn btn-outline-warning btn-sm rounded-pill mt-2">
+                    Grab Offer
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
-        <hr />
-      
-
-      </div>
-      </body>
-    </>
   );
 }
 

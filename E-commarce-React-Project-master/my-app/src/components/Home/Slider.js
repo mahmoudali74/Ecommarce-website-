@@ -7,7 +7,7 @@ const Slider= () => {
   return (
    <>
    <Carousel>
-   <div style={{height:"30%",width:'80%'}}>
+   <div style={{height:"30%",width:'100%'}}>
        <img src="https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&w=400" />
    
    </div>

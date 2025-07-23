@@ -1,69 +1,99 @@
-.nav-section{
-    margin-bottom: 20px;
-    background-color: black;
-   
+/* Base Nav */
+.navbar {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 10px 0;
+  box-shadow: 0 0 10px #00000055;
+  transition: all 0.3s ease;
 }
 
-.brand{
-    font-weight: bold;
-    font-family:cursive;
-    color: white !important;
-    margin: 5px 2px !important;
-    padding: 20px 5px  !important;
+.nav-section {
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-.link{
-    color: white;
-    text-decoration: none;
-}
-.toggle-icon{
-    background-color: rgb(0, 71, 177) !important;
-}
-
-.NavLink{
-    color: white !important;
-    max-width:150px ;
-    margin: 5px auto !important; 
+/* Logo */
+.brand .link {
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffc107; /* أصفر فخم */
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.3s ease;
 }
 
-.NavLink:hover{
-    background-color: rgb(0, 71, 177) !important;
-    cursor: pointer;
-
+.brand .link:hover {
+  color: #fff;
 }
 
-.navLinks .NavLink{
-    text-align: center;
-    font-weight: 500;
-    padding: 20px 30px  !important;
+/* Navigation Links */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.icon{
-    background-color: transparent;
-    border: none;
-    outline: none;
-    padding: 5px 20px;
-    color: white;
-    font-size: 30px;
-    margin: 10px;
-}
-.icon:hover{
-    color: rgb(0, 71, 177);
+.NavLink .link {
+  color: #eee;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.3s ease;
 }
 
-.login{
-    padding: 10px 30px;
-    font-weight: 500;
-    background-color: black;
-    color: white;
-    border: none;
-    outline: none;
-    margin: 10px;
-    text-decoration: none;
+.NavLink .link:hover {
+  background: #ffc107;
+  color: #000;
+  box-shadow: 0 0 10px #ffc107aa;
 }
 
-.login:hover{
-    background-color: rgb(0, 71, 177);
-    color: white;
+/* أيقونة السلة */
+.icon {
+  font-size: 18px;
+  margin-left: 16px;
+  color: #ffc107;
+  transition: 0.3s ease;
 }
 
+.icon:hover {
+  transform: scale(1.1);
+  color: #fff;
+}
+
+/* زرار اللوجين */
+.login {
+  background: linear-gradient(135deg, #ffc107, #ff9800);
+  color: #000;
+  font-weight: 600;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  margin-left: 16px;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.login:hover {
+  background: #ffc107;
+  box-shadow: 0 0 8px #ffc107aa;
+  transform: translateY(-1px);
+}
+
+/* أيقونة التوجّل */
+.toggle-icon {
+  background-color: #ffc107;
+  border-radius: 8px;
+  padding: 6px;
+}
+
+@media screen and (max-width: 992px) {
+  .navLinks {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

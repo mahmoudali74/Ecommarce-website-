@@ -1,0 +1,27 @@
+.pay-button-animated {
+  background: linear-gradient(-45deg, #000, #111, #222, #000);
+  background-size: 400% 400%;
+  animation: bgFlow 6s ease infinite;
+  border: none;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.pay-button-animated:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px #fff;
+}
+
+@keyframes bgFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

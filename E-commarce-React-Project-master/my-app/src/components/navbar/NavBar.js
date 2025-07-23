@@ -18,12 +18,12 @@ function NavBar() {
           <Nav className="me-auto navLinks" >
             <Nav.Link href="#home" className='NavLink'><Link className='link' to={'/home'}>home</Link></Nav.Link>
             <Nav.Link href="#link" className='NavLink'><Link className='link' to={'/products'}>products</Link></Nav.Link>
-            <Nav.Link href="#link" className='NavLink'><Link className='link' to={'/about'}>about us</Link></Nav.Link>
-            <Nav.Link href="#link" className='NavLink'><Link className='link' to={'/contact'}>contact us</Link></Nav.Link>
+          
+        
           </Nav>
           <Nav className="me-auto navLinks" >
             <Link to={'/cart'} className='icon link'><i className="fa-solid fa-cart-shopping"></i></Link>
-            <Link to={'/'} className='icon link'> <i className="fa-solid fa-globe"></i></Link>
+          
             <Link to={'/'} className='login'>login</Link>
           </Nav>
         </Navbar.Collapse>

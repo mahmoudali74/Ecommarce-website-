@@ -1,7 +1,117 @@
-.body{background: #6a11cb;
-   
-    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
-    
- 
-    
+/* ProductList.css */
+
+body {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Hero Section */
+.hero-header h1 {
+  font-size: 3rem;
+  letter-spacing: 1px;
+  color: #ffc107;
+  animation: fadeInDown 1s ease;
+}
+
+.hero-header p {
+  color: #ccc;
+  animation: fadeInUp 1.5s ease;
+}
+
+.hero-header .btn {
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-header .btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Carousel */
+.carousel {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
+}
+
+.slider-card {
+  border-radius: 1rem;
+}
+
+.slider-card .card-body {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-top: 1px solid #ffc107;
+}
+
+.slider-img {
+  object-fit: cover;
+  height: 500px;
+  width: 100%;
+}
+
+/* Featured Section */
+.fancy-title {
+  font-size: 2.5rem;
+  border-bottom: 2px dashed #ffc107;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Product Cards */
+.product-card {
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #1f1f1f, #0c0c0c);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(255, 193, 7, 0.4);
+}
+
+.product-card .card-title {
+  font-size: 1.1rem;
+}
+
+.product-card .btn {
+  transition: all 0.3s ease-in-out;
+}
+
+.product-card .btn:hover {
+  background-color: #ffc107;
+  color: white;
+  font-weight: bold;
+}
+
+/* Carousel Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #ffc107;
+  border-radius: 50%;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

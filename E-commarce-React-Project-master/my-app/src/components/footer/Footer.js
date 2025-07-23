@@ -1,38 +1,51 @@
-import React from 'react'
-import './footer.css'
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import {Link}  from "react-router-dom";
-
+import React from 'react';
+import './footer.css';
+import { Container, Row, Col } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div className='footer'>
+    <footer className="custom-footer">
       <Container>
-      <Row>
-        <Col className='col-one'>
-        <h1>grad project</h1>
-        <p>
-          we are e-commerce app using react js and APIs.
-        </p>
-        </Col>
-        <Col className='col-two'>
-          <h1>links</h1>
-          <Link className='footerlink' to={'/home'}>Home</Link>
-          <Link className='footerlink' to={'/about'}>about us</Link>
-          <Link className='footerlink' to={'products'}>products</Link>
-        </Col>
-        <Col className='col-three'>
-          <h1>social links</h1>
-          <i className="fa-brands fa-facebook"></i>
-          <i className="fa-brands fa-instagram"></i>
-          <i className="fa-solid fa-envelope"></i>
-        </Col>
-      </Row>
-    </Container>
-    </div>
-  )
+        <Row className="gy-4">
+          <Col md={4}>
+            <div className="footer-section">
+              <h2 className="footer-title">Grad Project</h2>
+              <p className="footer-description">
+                A modern e-commerce platform built with React JS and powerful APIs to give you a smooth shopping experience.
+              </p>
+            </div>
+          </Col>
+
+          <Col md={4}>
+            <div className="footer-section">
+              <h2 className="footer-title">Quick Links</h2>
+              <ul className="footer-links">
+                <li><Link to="/home">🏠 Home</Link></li>
+                <li><Link to="/about">👤 About Us</Link></li>
+                <li><Link to="/products">🛒 Products</Link></li>
+              </ul>
+            </div>
+          </Col>
+
+          <Col md={4}>
+            <div className="footer-section">
+              <h2 className="footer-title">Stay Connected</h2>
+              <div className="footer-icons">
+                <a href="https://facebook.com" target="_blank" rel="noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank" rel="noreferrer"><i className="fa-brands fa-instagram"></i></a>
+                <a href="mailto:info@example.com"><i className="fa-solid fa-envelope"></i></a>
+              </div>
+            </div>
+          </Col>
+        </Row>
+
+        <hr className="footer-line" />
+
+        <p className="footer-bottom-text text-center">© 2025 Grad Project. Crafted with ❤️ by the team.</p>
+      </Container>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;

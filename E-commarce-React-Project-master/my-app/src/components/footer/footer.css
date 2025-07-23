@@ -1,30 +1,72 @@
-.footer{
-    margin-top: 10px;
-    background-color: black;
-    color: white;
-    padding: 50px 20px;
-    text-align: center;
+.custom-footer {
+  background-color: #0f0f0f;
+  color: #e4e4e4;
+  padding: 60px 0 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1{
-    font-family: serif;
-}
-.col-one,.col-two,.col-three{
-    margin: 50px 10px;
-}
-.col-one h1{
-    margin-bottom: 30px;
+.footer-section {
+  padding: 0 20px;
 }
 
-.footerlink{
-    text-decoration: none;
-    display: block;
-    margin: 30px;
+.footer-title {
+  font-size: 20px;
+  color: #ffc107; /* ✅ أصفر ملكي */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
-.col-three i{
-    font-size: 20px;
-    font-weight: bold;
-    padding: 20px;
+.footer-description {
+  font-size: 14px;
+  color: #bbb;
+  line-height: 1.7;
 }
 
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffc107; /* ✅ Hover أصفر */
+  margin-left: 5px;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-icons a {
+  color: #ccc;
+  font-size: 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #ffc107; /* ✅ أيقونات بالهوفر */
+  transform: scale(1.2);
+}
+
+.footer-line {
+  border-color: #333;
+  margin: 40px 0 20px;
+}
+
+.footer-bottom-text {
+  font-size: 13px;
+  color: #888;
+}

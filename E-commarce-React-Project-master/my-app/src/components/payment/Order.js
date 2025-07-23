@@ -4,6 +4,8 @@ import ListGroup from "react-bootstrap/ListGroup";
 import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import './cart.css'; // استورد الستايل الفشيخ
+
 function GroupExample() {
   const cart = useSelector((state) => state.cart);
   const [quantity, setQuantity] = useState(1);
@@ -34,7 +36,7 @@ function GroupExample() {
               </div>
               <Card.Body>
                 <Card.Title>{product.category}</Card.Title>
-                <Card.Text style={{minHeight:"250px"}}>{product.description}</Card.Text>
+              
               </Card.Body>
               <ListGroup className="list-group-flush">
                 <ListGroup.Item>Price of item: {product.price}</ListGroup.Item>
@@ -82,12 +84,13 @@ function GroupExample() {
             </Card>
           </div>
         ))}
-        <Link
-          to={"/payment"}
-          className="btn bg-success text-white  w-75 mb-3 mx-auto mt-5"
-        >
-          Pay Using Card {` ( ${sum.toFixed(2)} )`}
-        </Link>
+<Link
+  to="/payment"
+  className="pay-button-animated w-75 mb-3 mx-auto mt-5 d-block text-center fw-bold text-white"
+>
+  Pay Using Card {` ( ${sum.toFixed(2)} )`}
+</Link>
+
       </div>
     </div>
   );
